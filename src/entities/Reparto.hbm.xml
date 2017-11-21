@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-nov-2017 13:10:42 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="entities.Reparto" table="REPARTO">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="CODIGO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="actores" class="entities.Actores" fetch="join">
+            <column name="ACTORES" />
+        </many-to-one>
+        <many-to-one name="peliculas" class="entities.Peliculas" fetch="join">
+            <column name="PELICULAS" />
+        </many-to-one>
+        <property name="tipoPapel" type="java.lang.String">
+            <column name="TIPOPAPEL" />
+        </property>
+    </class>
+</hibernate-mapping>
